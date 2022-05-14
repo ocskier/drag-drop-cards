@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #e9eef8;
+  background-color: #afc5f1;
   min-height: 100px;
   display: flex;
   flex-direction: column;
@@ -11,6 +11,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  text-shadow: 2px 2px 3px rgba(33, 39, 208, 0.8);
 }
 
 .cols-wrapper {
@@ -20,6 +21,7 @@
 .type {
   height: 100%;
   flex: 1 1 30%;
+  margin-top: 1em;
   overflow: scroll;
 }
 

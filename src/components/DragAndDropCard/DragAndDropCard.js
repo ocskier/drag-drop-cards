@@ -6,7 +6,13 @@ const DragAndDropCard = ({ id, status, title, handleDrag }) => {
       draggable
       onDragStart={() => {}}
       onDragEnd={() => {}}
-    ></div>
+    >
+      <header className="card-header">
+        <p className="card-header-title">
+          {status[0].toUpperCase() + status.slice(1)}
+        </p>
+      </header>
+    </div>
   );
 };
 
