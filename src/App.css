@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #e9eef8;
   min-height: 100px;
   display: flex;
   flex-direction: column;
@@ -15,5 +15,11 @@
 
 .cols-wrapper {
   height: calc(100vh - 120px);
+}
+
+.type {
+  height: 100%;
+  flex: 1 1 30%;
+  overflow: scroll;
 }
 

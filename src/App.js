@@ -5,12 +5,24 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <strong className="has-text-white">Todos</strong>
+        <strong className="has-text-black">Todos</strong>
       </header>
       <div className="container is-flex is-justify-content-space-evenly is-fluid cols-wrapper">
-        {[1, 2, 3].map((val) => (
-          <DragAndDropCard />
-        ))}
+        <div id="opened" className="type mx-2">
+          {[1, 2, 3].map((val) => (
+            <DragAndDropCard />
+          ))}
+        </div>
+        <div id="in progress" className="type mx-2">
+          {[1, 2, 3].map((val) => (
+            <DragAndDropCard />
+          ))}
+        </div>
+        <div id="completed" className="type mx-2">
+          {[1, 2, 3].map((val) => (
+            <DragAndDropCard />
+          ))}
+        </div>
       </div>
     </div>
   );
