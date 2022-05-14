@@ -10,17 +10,29 @@ function App() {
       <div className="container is-flex is-justify-content-space-evenly is-fluid cols-wrapper">
         <div id="opened" className="type mx-2">
           {[1, 2, 3].map((val) => (
-            <DragAndDropCard status={"opened"} />
+            <DragAndDropCard
+              key={val}
+              handleDrag={() => {}}
+              status={"opened"}
+            />
           ))}
         </div>
         <div id="in progress" className="type mx-2">
           {[1, 2, 3].map((val) => (
-            <DragAndDropCard status={"in progress"} />
+            <DragAndDropCard
+              key={val}
+              handleDrag={() => {}}
+              status={"in progress"}
+            />
           ))}
         </div>
         <div id="completed" className="type mx-2">
           {[1, 2, 3].map((val) => (
-            <DragAndDropCard status={"completed"} />
+            <DragAndDropCard
+              key={val}
+              handleDrag={() => {}}
+              status={"completed"}
+            />
           ))}
         </div>
       </div>

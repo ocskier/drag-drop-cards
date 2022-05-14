@@ -4,8 +4,14 @@ const DragAndDropCard = ({ id, status, title, handleDrag }) => {
       id={id}
       className="card m-3"
       draggable
-      onDragStart={() => {}}
-      onDragEnd={() => {}}
+      onDragStart={(e) => handleDrag(e, id)}
+      onDragEnd={(e) => {
+        e.target.closest(".card").style.backgroundColor = "#bbbbbb";
+        setTimeout(
+          () => (e.target.closest(".card").style.backgroundColor = "#ffffff"),
+          1200
+        );
+      }}
     >
       <header className="card-header">
         <p className="card-header-title">
