@@ -17,26 +17,45 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      onDragEnter={(e) => e.preventDefault()}
+      onDragOver={(e) => e.preventDefault()}
+      onDrop={(e) => {
+        if (
+          todos.find((task) => task.id === dragTgt).status !==
+          e.target.closest(".type").id
+        ) {
+          setTargetStatus(e.target.closest(".type").id);
+          setTodos(
+            todos.map((todo) =>
+              todo.id === dragTgt
+                ? { ...todo, status: e.target.closest(".type").id }
+                : todo
+            )
+          );
+        }
+      }}
+    >
       <header className="App-header">
         <strong className="has-text-black">Todos</strong>
       </header>
       <div className="container is-flex is-justify-content-space-evenly is-fluid cols-wrapper">
-        <div id="opened" className="type mx-2">
+        <div id="Opened" className="type mx-2">
           {todos
             .filter((todo) => todo.status.toLowerCase() === "opened")
             .map((todo, i) => (
               <DragAndDropCard key={i} handleDrag={handleDrag} {...todo} />
             ))}
         </div>
-        <div id="in progress" className="type mx-2">
+        <div id="In progress" className="type mx-2">
           {todos
             .filter((todo) => todo.status.toLowerCase() === "in progress")
             .map((todo, i) => (
               <DragAndDropCard key={i} handleDrag={handleDrag} {...todo} />
             ))}
         </div>
-        <div id="completed" className="type mx-2">
+        <div id="Completed" className="type mx-2">
           {todos
             .filter((todo) => todo.status.toLowerCase() === "completed")
             .map((todo, i) => (
