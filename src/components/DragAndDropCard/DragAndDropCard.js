@@ -27,6 +27,7 @@ const DragAndDropCard = ({ id, status, title, handleDrag }) => {
         <div className="content">
           {title}
           <br />
+          <br />
           <time dateTime="2016-1-1">Timestamp</time>
         </div>
       </div>
