@@ -1,5 +1,7 @@
-import "./App.css";
 import DragAndDropCard from "@components/DragAndDropCard";
+import todos from "@data";
+
+import "./App.css";
 
 function App() {
   return (
@@ -9,31 +11,25 @@ function App() {
       </header>
       <div className="container is-flex is-justify-content-space-evenly is-fluid cols-wrapper">
         <div id="opened" className="type mx-2">
-          {[1, 2, 3].map((val) => (
-            <DragAndDropCard
-              key={val}
-              handleDrag={() => {}}
-              status={"opened"}
-            />
-          ))}
+          {todos
+            .filter(({ status }) => status.toLowerCase() === "opened")
+            .map(({ status }, i) => (
+              <DragAndDropCard key={i} handleDrag={() => {}} status={status} />
+            ))}
         </div>
         <div id="in progress" className="type mx-2">
-          {[1, 2, 3].map((val) => (
-            <DragAndDropCard
-              key={val}
-              handleDrag={() => {}}
-              status={"in progress"}
-            />
-          ))}
+          {todos
+            .filter(({ status }) => status.toLowerCase() === "in progress")
+            .map(({ status }, i) => (
+              <DragAndDropCard key={i} handleDrag={() => {}} status={status} />
+            ))}
         </div>
         <div id="completed" className="type mx-2">
-          {[1, 2, 3].map((val) => (
-            <DragAndDropCard
-              key={val}
-              handleDrag={() => {}}
-              status={"completed"}
-            />
-          ))}
+          {todos
+            .filter(({ status }) => status.toLowerCase() === "completed")
+            .map(({ status }, i) => (
+              <DragAndDropCard key={i} handleDrag={() => {}} status={status} />
+            ))}
         </div>
       </div>
     </div>
