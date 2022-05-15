@@ -1,9 +1,15 @@
+import { useState } from "react";
+
 import DragAndDropCard from "@components/DragAndDropCard";
-import todos from "@data";
+import testData from "@data";
 
 import "./App.css";
 
 function App() {
+  const [dragTgt, setdragTgt] = useState(null);
+  const [targetStatus, setTargetStatus] = useState(null);
+  const [todos, setTodos] = useState(testData);
+
   return (
     <div className="App">
       <header className="App-header">
