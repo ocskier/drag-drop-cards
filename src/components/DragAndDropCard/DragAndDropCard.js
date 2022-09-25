@@ -32,7 +32,7 @@ const DragAndDropCard = ({ id, status, title, handleDrag }) => {
         </div>
       </div>
       <footer className="card-footer">
-        <a href="#" className="card-footer-item">
+        <a href="https://www.google.com" className="card-footer-item">
           View
         </a>
       </footer>

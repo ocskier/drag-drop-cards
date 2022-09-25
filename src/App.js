@@ -7,7 +7,7 @@ import "./App.css";
 
 function App() {
   const [dragTgt, setDragTgt] = useState(null);
-  const [targetStatus, setTargetStatus] = useState(null);
+  const [setTargetStatus] = useState(null);
   const [todos, setTodos] = useState(testData);
 
   // change background color and set drag target on drag drop
